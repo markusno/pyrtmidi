@@ -49,7 +49,8 @@ elif OSNAME == 'Windows':
     define_macros = [('__WINDOWS_MM__', ''),
                      ('PK_WINDOWS', '1')]
     library_dirs = ['C:\Program Files\Microsoft SDKs\Windows\v7.1\Lib']
-    libraries = ['winmm', 'python34']
+    python_library = 'python{}{}'.format(sys.version_info[0], sys.version_info[1])
+    libraries = ['winmm', python_library]
     extra_compile_args = ['/EHsc']
 elif OSNAME == 'Irix':
     define_macros = [('__IRIX_MD__', '')]
